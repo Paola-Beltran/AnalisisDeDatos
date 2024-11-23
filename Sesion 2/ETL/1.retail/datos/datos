@@ -1,0 +1,18 @@
+def transform_customers(df):
+    """
+    """
+    df['customer_email']= df['customer_email'].str.lower()
+
+    #validar campo obligatorios
+
+    # customer_fname true
+    # customer_lname false
+    # customer_email false
+    # any() devulve las columnas 
+    # any().any() va a dar un true o false de los tres primeros comentarios
+    if df[['customer_fname','customer_lname','customer_email']].isnull().any():
+        print('Datos faltantes en el DataFrame de Customers')
+        sys.exit(1)
+    
+    return df
+    
